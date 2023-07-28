@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-label {
+  align-self: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+}
+
+.actions__search {
+  display: flex;
+  flex-direction: column;
+
+}
+.actions__search label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+.actions__search input {
+  width: 85vw;
+}
+
+.actions__filter {
+  align-self: flex-end;
+}

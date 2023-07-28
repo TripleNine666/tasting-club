@@ -1,0 +1,12 @@
+:host {
+  width: 95vw;
+}
+
+.user {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}

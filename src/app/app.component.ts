@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NbAuthService} from "@nebular/auth";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tasting-club';
+  isAuthenticated = false; // переменная для хранения статуса аутентификации
+
+  constructor(private authService: NbAuthService) { }
+
+  ngOnInit(): void {
+    this.authService.onAuthenticationChange().subscribe(auth => {
+      this.isAuthenticated = auth; // присваиваем значение переменной
+    });
+  }
 }

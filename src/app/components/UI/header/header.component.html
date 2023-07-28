@@ -1,0 +1,21 @@
+<div>
+  <div class="container" *ngIf="!isAuthenticated; else auth">
+    <nb-user size="large"
+             name="User"
+             routerLink="/auth"
+             class="user">
+    </nb-user>
+    <button nbButton status="basic" routerLink="/auth/register">Registration</button>
+  </div>
+  <ng-template #auth>
+    <div class="container">
+      <nb-user size="large"
+               name="Kirill"
+               routerLink="/profile"
+               class="user">
+      </nb-user>
+      <button nbButton status="basic" (click)="logOut()">Log Out</button>
+    </div>
+  </ng-template>
+</div>
+
