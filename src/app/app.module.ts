@@ -8,20 +8,23 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { NebularModule } from "./modules/nebular/nebular.module";
-import { NbIconModule, NbThemeModule} from "@nebular/theme";
+import {NbIconModule, NbLayoutModule, NbSidebarModule, NbThemeModule} from "@nebular/theme";
 import { HeaderComponent } from './components/UI/header/header.component';
 import { MainComponent } from './pages/main/main.component';
 import {NbEvaIconsModule} from "@nebular/eva-icons";
 import {HttpClientModule} from "@angular/common/http";
 import {NbAuthModule, NbAuthSimpleToken, NbDummyAuthStrategy} from "@nebular/auth";
 import { ProfileComponent } from './pages/profile/profile.component';
+import { DrinkItemComponent } from './components/drink-item/drink-item.component';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
-    ProfileComponent
+    ProfileComponent,
+    DrinkItemComponent
   ],
   imports: [
     NbThemeModule.forRoot(),
@@ -29,6 +32,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AppRoutingModule,
     NebularModule,
     NbEvaIconsModule,
+    NbLayoutModule,
+    NbSidebarModule.forRoot(),
     NbIconModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
@@ -46,9 +51,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
         delay: 0,
       })],
       forms: {},
-
-
     }),
+    RatingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

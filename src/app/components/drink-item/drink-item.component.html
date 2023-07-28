@@ -1,0 +1,41 @@
+<form class="container" *ngIf="drink">
+  <a class="image">
+    <img src="{{drink.drinkPhotos[0]}}" alt="{{drink.name}}">
+  </a>
+  <div class="drink-block">
+    <div class="drink-header">
+      <div>{{drink.name}}</div>
+    </div>
+    <div class="drink-info">
+      <div class="drink-info__rating">
+        <div class="drink-info__rating__label">Rating of tasting club: {{9.5}}</div>
+        <star-rating [value]="9.5" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="true"></star-rating>
+      </div>
+      <ul class="list-description">
+        <li>
+          <span class="drink-info-description">Region:</span>
+          <a>{{drink.producingCountry.name}}</a>
+        </li>
+        <li>
+          <span class="drink-info-description">Producer:</span>
+          <a> {{drink.producer.name}}</a>
+        </li>
+        <li>
+          <span class="drink-info-description">Brand:</span>
+          <a>{{drink.brand.name}}</a>
+        </li>
+        <li>
+          <span class="drink-info-description">Strength:</span>
+          <a>{{drink.alcoPrecentage}}%</a>
+        </li>
+        <li>
+          <span class="drink-info-description">Type:</span>
+          <a>{{drink.drinkType.title}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="drink-actions">
+      <button nbButton size="large" status="primary">Add to My Drinks</button>
+    </div>
+  </div>
+</form>

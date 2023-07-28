@@ -1,18 +1,41 @@
 <div class="container">
-  <div class="main-label">
-    <h2>Welcome to out tasting team!</h2>
+
+
+  <div class="sidebar">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="gradient"></div>
   </div>
-  <div class="actions">
-    <div class="actions__search">
-      <label for="search">Enter a name of drink</label>
-      <nb-form-field>
-        <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
-        <input id="search" type="text" nbInput fullWidth status="primary" placeholder="Search...">
-      </nb-form-field>
+  <div class="content-container">
+
+
+    <div class="main-label">
+      <h2>Welcome to out tasting team!</h2>
     </div>
-    <div class="actions__filter">
-      <button nbButton ghost size="large" status="primary"><nb-icon icon="funnel-outline"></nb-icon></button>
+
+
+    <div class="actions">
+      <div class="actions__search">
+        <label for="search">Enter a name of drink</label>
+        <nb-form-field>
+          <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
+          <input id="search" type="text" nbInput fullWidth status="primary" placeholder="Search...">
+        </nb-form-field>
+      </div>
+      <div class="actions__filter">
+        <button nbButton ghost size="large" status="primary"><nb-icon icon="funnel-outline"></nb-icon></button>
+      </div>
     </div>
+
+
+    <div class="drink-list">
+      <app-drink-item
+        *ngFor="let drink of drinks"
+        [drink]="drink"
+      ></app-drink-item>
+    </div>
+
   </div>
-  <div class="drink-list"></div>
 </div>

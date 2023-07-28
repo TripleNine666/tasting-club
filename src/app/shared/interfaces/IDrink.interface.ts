@@ -1,6 +1,6 @@
 export interface SuitableProduct {
   id: number,
-  suitableProduct: string
+  title: string
 }
 
 export interface DrinkType {
@@ -10,20 +10,31 @@ export interface DrinkType {
 
 export interface ProducingCountry {
   id: number,
-  title: string,
+  name: string,
+}
+
+export interface DrinkBrand {
+  id: number,
+  name: string,
+}
+
+export interface DrinkProducer {
+  id: number,
+  name: string,
 }
 
 export interface Drink {
   id: number,
   drinkType: DrinkType,
   name: string,
-  volume: number,
+  brand: DrinkBrand,
+  producer: DrinkProducer,
   alcoPrecentage: number,
   producingCountry: ProducingCountry,
   color: string,
   taste: string,
   aroma: string,
   gastronomy: string,
-  drinkPhoto: string[],
+  drinkPhotos: string[],
   suitableProducts: SuitableProduct[]
 }

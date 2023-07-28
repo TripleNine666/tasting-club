@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DrinkService} from "../../services/drink/drink.service";
+import {Drink} from "../../shared/interfaces/IDrink.interface";
 
 @Component({
   selector: 'app-main',
@@ -8,11 +9,13 @@ import {DrinkService} from "../../services/drink/drink.service";
 })
 export class MainComponent implements OnInit{
 
-  constructor(private drinkService: DrinkService) {
-  }
+  constructor(private drinkService: DrinkService) { }
+
+  drinks?: Drink[];
 
   ngOnInit() {
     this.drinkService.getProducts().subscribe(drinks => {
+      this.drinks = drinks;
       console.log(drinks)
     })
   }
