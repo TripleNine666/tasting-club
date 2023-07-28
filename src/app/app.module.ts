@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 import { NebularModule } from "./modules/nebular/nebular.module";
 import { NbIconModule, NbThemeModule} from "@nebular/theme";
 import { HeaderComponent } from './components/UI/header/header.component';
@@ -28,6 +31,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
     NbEvaIconsModule,
     NbIconModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+      passThruUnknownUrl: true,
+      put204: false
+    }),
     NbAuthModule.forRoot({
       strategies: [ NbDummyAuthStrategy.setup({
         name: 'email',
