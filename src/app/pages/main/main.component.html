@@ -17,15 +17,20 @@
 
 
     <div class="actions">
+      <div class="actions-sort">
+        <p>Sort by:</p>
+        <nb-button-group (valueChange)="updateSorting($event)" size="tiny" ghost shape="semi-round">
+          <button nbButtonToggle value="name">Name</button>
+          <button nbButtonToggle value="rating">Rating</button>
+        </nb-button-group>
+      </div>
       <div class="actions__search">
         <label for="search">Enter a name of drink</label>
         <nb-form-field>
           <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
           <input id="search" type="text" nbInput fullWidth status="primary" placeholder="Search...">
+          <button class="actions__search__button" nbButton status="primary">Search</button>
         </nb-form-field>
-      </div>
-      <div class="actions__filter">
-        <button nbButton ghost size="large" status="primary"><nb-icon icon="funnel-outline"></nb-icon></button>
       </div>
     </div>
 

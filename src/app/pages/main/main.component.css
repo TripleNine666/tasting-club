@@ -38,11 +38,24 @@
 
 .actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 50vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 55vw;
   align-self: center;
   margin-bottom: 20px;
+}
+
+.actions-sort {
+  display: flex;
+}
+
+.actions-sort p {
+  margin-right: 12px;
+}
+
+#search {
+  margin-right: 2vw;
 }
 
 .actions__search {
@@ -56,7 +69,7 @@
   margin-left: 4px;
 }
 .actions__search input {
-  width: 45vw;
+  width: 40vw;
 }
 
 .actions__filter {
