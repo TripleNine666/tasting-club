@@ -12,8 +12,13 @@ export class DrinkService {
 
   private drinkUrl = 'api/drinks';
 
-  getProducts(): Observable<Drink[]> {
+  getDrinks(): Observable<Drink[]> {
     return this.http.get<Drink[]>(this.drinkUrl)
+  }
+
+  getDrink(id: number): Observable<Drink> {
+    const url =`${this.drinkUrl}/${id}`;
+    return this.http.get<Drink>(url);
   }
 
 }

@@ -1,15 +1,15 @@
 <form class="container" *ngIf="drink">
   <a class="image">
-    <img src="{{drink.drinkPhotos[0]}}" alt="{{drink.name}}">
+    <img src="{{drink.drinkPhotos[0]}}" alt="{{drink.name}}" routerLink="/drink-details/{{drink.id}}">
   </a>
   <div class="drink-block">
     <div class="drink-header">
-      <div>{{drink.name}}</div>
+      <div routerLink="/drink-details/{{drink.id}}">{{drink.name}}</div>
     </div>
     <div class="drink-info">
       <div class="drink-info__rating">
-        <div class="drink-info__rating__label">Rating of tasting club: {{9.5}}</div>
-        <star-rating [value]="9.5" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="true"></star-rating>
+        <div class="drink-info__rating__label">Rating of tasting club: {{drink.rating}}</div>
+        <star-rating [value]="drink.rating" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="true"></star-rating>
       </div>
       <ul class="list-description">
         <li>

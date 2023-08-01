@@ -27,6 +27,8 @@ export interface Drink {
   id: number,
   drinkType: DrinkType,
   name: string,
+  price: number,
+  rating: number,
   brand: DrinkBrand,
   producer: DrinkProducer,
   alcoPrecentage: number,

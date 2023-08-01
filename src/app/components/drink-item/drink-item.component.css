@@ -10,6 +10,7 @@
   padding: 5px 20px 0;
   text-align: center;
   position: relative;
+  cursor: pointer;
 }
 
 a img {

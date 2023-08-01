@@ -15,6 +15,8 @@ export class InMemoryDataService implements InMemoryDbService {
           title: 'Whiskey'
         },
         name: '"Black Ram" Bourbon Finish 3 Years Old',
+        price: 20,
+        rating: 9.5,
         alcoPrecentage: 40,
         producingCountry: {
           id: 1,
@@ -46,6 +48,8 @@ export class InMemoryDataService implements InMemoryDbService {
           title: 'Whiskey'
         },
         name: '"Nestville", gift box',
+        price: 25,
+        rating: 8.6,
         alcoPrecentage: 40,
         producingCountry: {
           id: 1,

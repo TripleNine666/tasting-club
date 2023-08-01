@@ -19,6 +19,7 @@ import { DrinkItemComponent } from './components/drink-item/drink-item.component
 import { RatingModule } from 'ng-starrating';
 import { FilterComponent } from './components/filter/filter.component';
 import { FilterItemComponent } from './components/filter/filter-item/filter-item.component';
+import { DrinkDetailsComponent } from './pages/drink-details/drink-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FilterItemComponent } from './components/filter/filter-item/filter-item
     ProfileComponent,
     DrinkItemComponent,
     FilterComponent,
-    FilterItemComponent
+    FilterItemComponent,
+    DrinkDetailsComponent
   ],
   imports: [
     NbThemeModule.forRoot(),

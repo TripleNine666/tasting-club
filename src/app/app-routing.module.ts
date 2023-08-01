@@ -10,11 +10,13 @@ import {
   NbResetPasswordComponent,
 } from '@nebular/auth';
 import {ProfileComponent} from "./pages/profile/profile.component";
+import {DrinkDetailsComponent} from "./pages/drink-details/drink-details.component";
 
 const routes: Routes = [
 
   {path: '', component: MainComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'drink-details/:id', component: DrinkDetailsComponent},
 
   //Auth routes
   {

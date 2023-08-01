@@ -15,7 +15,7 @@ export class MainComponent implements OnInit{
   sortCriteria = 'name';
 
   ngOnInit() {
-    this.drinkService.getProducts().subscribe(drinks => {
+    this.drinkService.getDrinks().subscribe(drinks => {
       this.drinks = drinks;
       console.log(drinks)
     })
