@@ -1,6 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {NbButtonModule, NbUserModule, NbInputModule, NbFormFieldModule, NbButtonGroupModule} from '@nebular/theme';
+import {
+  NbButtonModule,
+  NbUserModule,
+  NbInputModule,
+  NbFormFieldModule,
+  NbButtonGroupModule,
+  NbCheckboxModule
+} from '@nebular/theme';
+
 
 
 @NgModule({
@@ -12,13 +20,15 @@ import {NbButtonModule, NbUserModule, NbInputModule, NbFormFieldModule, NbButton
     NbInputModule,
     NbFormFieldModule,
     NbButtonGroupModule,
+    NbCheckboxModule,
   ],
   exports: [
     NbButtonModule,
     NbUserModule,
     NbInputModule,
     NbFormFieldModule,
-    NbButtonGroupModule
+    NbButtonGroupModule,
+    NbCheckboxModule
   ]
 })
 export class NebularModule { }

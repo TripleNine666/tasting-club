@@ -12,7 +12,7 @@ export class MainComponent implements OnInit{
   constructor(private drinkService: DrinkService) { }
 
   drinks?: Drink[];
-  sortCriteria = null;
+  sortCriteria = 'name';
 
   ngOnInit() {
     this.drinkService.getProducts().subscribe(drinks => {

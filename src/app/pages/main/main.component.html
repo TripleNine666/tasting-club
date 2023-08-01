@@ -1,13 +1,10 @@
 <div class="container">
 
 
-  <div class="sidebar">
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="block"></div>
-    <div class="gradient"></div>
-  </div>
+  <app-filter class="sidebar">
+
+  </app-filter>
+
   <div class="content-container">
 
 
@@ -18,9 +15,9 @@
 
     <div class="actions">
       <div class="actions-sort">
-        <p>Sort by:</p>
+        <p class="actions-sort__title">Sort by:</p>
         <nb-button-group (valueChange)="updateSorting($event)" size="tiny" ghost shape="semi-round">
-          <button nbButtonToggle value="name">Name</button>
+          <button nbButtonToggle value="name" pressed>Name</button>
           <button nbButtonToggle value="rating">Rating</button>
         </nb-button-group>
       </div>

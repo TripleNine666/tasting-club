@@ -1,0 +1,6 @@
+<div class="filter-block" *ngIf="filter">
+  <div class="filter-title">{{filter.title}}</div>
+  <div class="filter-checkbox" *ngFor="let item of filter.content">
+    <nb-checkbox status="basic">{{item}}</nb-checkbox>
+  </div>
+</div>

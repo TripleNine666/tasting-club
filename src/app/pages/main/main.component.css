@@ -1,3 +1,7 @@
+::ng-deep .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
+  padding-top: 0;
+}
+
 .container {
   display: flex;
   position: relative;
@@ -17,10 +21,6 @@
   background-color: #C6E2FF;
   top: 0;
   left: 0;
-}
-.gradient {
-  height: 200px;
-  background: linear-gradient(#C6E2FF, #edf1f7);
 }
 
 .content-container {
@@ -50,8 +50,11 @@
   display: flex;
 }
 
-.actions-sort p {
+.actions-sort__title {
   margin-right: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: gray;
 }
 
 #search {

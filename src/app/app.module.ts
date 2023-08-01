@@ -17,6 +17,8 @@ import {NbAuthModule, NbAuthSimpleToken, NbDummyAuthStrategy} from "@nebular/aut
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DrinkItemComponent } from './components/drink-item/drink-item.component';
 import { RatingModule } from 'ng-starrating';
+import { FilterComponent } from './components/filter/filter.component';
+import { FilterItemComponent } from './components/filter/filter-item/filter-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RatingModule } from 'ng-starrating';
     HeaderComponent,
     MainComponent,
     ProfileComponent,
-    DrinkItemComponent
+    DrinkItemComponent,
+    FilterComponent,
+    FilterItemComponent
   ],
   imports: [
     NbThemeModule.forRoot(),
