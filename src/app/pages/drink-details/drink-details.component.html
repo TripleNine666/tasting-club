@@ -6,7 +6,9 @@
   </nb-card-header>
   <nb-card-body>
     <div class="body-image">
-      <img src="{{drink.drinkPhotos[0]}}" alt="{{drink.name}}">
+      <a>
+        <img src="{{drink.drinkPhotos[0]}}" alt="{{drink.name}}">
+      </a>
     </div>
     <div class="body-info">
       <div class="body-info-block">
@@ -55,7 +57,25 @@
   </nb-card-body>
   <nb-card-footer>
     <div class="footer-description">
-
+      <h2 class="footer-description-title">Tasting Notes</h2>
+      <div>
+        <div class="footer-description-block">
+          <span class="title">Color</span>
+          <p>{{drink.color}}</p>
+        </div>
+        <div class="footer-description-block">
+          <span class="title">Taste</span>
+          <p>{{drink.taste}}</p>
+        </div>
+        <div class="footer-description-block">
+          <span class="title">Aroma</span>
+          <p>{{drink.aroma}}</p>
+        </div>
+        <div class="footer-description-block">
+          <span class="title">Gastronomy</span>
+          <p>{{drink.gastronomy}}</p>
+        </div>
+      </div>
     </div>
   </nb-card-footer>
 </nb-card>
