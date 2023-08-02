@@ -77,17 +77,17 @@ li a:hover {
 }
 
 
-.drink-info {
-  display: flex;
-  flex-direction: column;
-}
+  .drink-info {
+    display: flex;
+    flex-direction: column;
+  }
 
-.drink-info a {
-  outline: none;
-  text-decoration: none;
-  border-bottom: 1px solid #e6e6e6;
-  color: #474445;
-}
+  .drink-info a {
+    outline: none;
+    text-decoration: none;
+    border-bottom: 1px solid #e6e6e6;
+    color: #474445;
+  }
 
 .drink-info div {
   margin-bottom: 6px;

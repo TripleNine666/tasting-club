@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NbAuthService} from "@nebular/auth";
+import {AuthService} from "./services/auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,14 @@ import {NbAuthService} from "@nebular/auth";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isAuthenticated = false; // переменная для хранения статуса аутентификации
+  isAuthenticated = false;
 
-  constructor(private authService: NbAuthService) { }
+  constructor(private nbAuthService: NbAuthService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.onAuthenticationChange().subscribe(auth => {
-      this.isAuthenticated = auth; // присваиваем значение переменной
+    this.nbAuthService.onAuthenticationChange().subscribe(auth => {
+      this.authService.changeIsAuthenticated(auth);
+      this.isAuthenticated = auth;
     });
   }
 }

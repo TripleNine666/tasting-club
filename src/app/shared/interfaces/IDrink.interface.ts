@@ -23,6 +23,12 @@ export interface DrinkProducer {
   name: string,
 }
 
+export interface DrinkPhotos {
+  smallPhoto: string,
+  mainPhoto: string,
+  additionalPhotos: string[]
+}
+
 export interface Drink {
   id: number,
   drinkType: DrinkType,
@@ -37,6 +43,6 @@ export interface Drink {
   taste: string,
   aroma: string,
   gastronomy: string,
-  drinkPhotos: string[],
+  drinkPhotos: DrinkPhotos,
   suitableProducts: SuitableProduct[]
 }

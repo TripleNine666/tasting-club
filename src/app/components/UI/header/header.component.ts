@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NbAuthService} from "@nebular/auth";
 import {Router} from "@angular/router";
 
@@ -12,6 +12,8 @@ export class HeaderComponent {
   constructor(private authService: NbAuthService, private router: Router) {
   }
   @Input() isAuthenticated = false;
+
+
 
   logOut(): void {
     this.authService.logout('email').subscribe(() => {

@@ -1,6 +1,6 @@
 <form class="container" *ngIf="drink">
   <a class="image">
-    <img src="{{drink.drinkPhotos[0]}}" alt="{{drink.name}}" routerLink="/drink-details/{{drink.id}}">
+    <img src="{{drink.drinkPhotos.smallPhoto}}" alt="{{drink.name}}" routerLink="/drink-details/{{drink.id}}">
   </a>
   <div class="drink-block">
     <div class="drink-header">

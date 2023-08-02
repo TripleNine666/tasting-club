@@ -34,7 +34,11 @@ export class InMemoryDataService implements InMemoryDbService {
         taste: 'Whisky has a sophisticated, delicate, rounded taste with perfect balance, hints of vanilla, red apples and milk chocolate. A long, warm finish gives a bouquet of perfection.',
         aroma: 'Whisky has a delicate, elegant aroma of heather honey with a hint of spice.',
         gastronomy: 'Whiskey is a great digestif, is drunk as well in pure form, and water is fine in cocktails.',
-        drinkPhotos: ['https://s2.wine.style/images_gen/201/201229/0_0_prod_desktop.jpg'],
+        drinkPhotos: {
+          smallPhoto: "https://s2.wine.style/images_gen/201/201229/0_0_cat.jpg",
+          mainPhoto: "https://s2.wine.style/images_gen/201/201229/0_0_prod_desktop.jpg",
+          additionalPhotos: [],
+        },
         suitableProducts: [{
           id: 1,
           title: 'ice',
@@ -67,7 +71,11 @@ export class InMemoryDataService implements InMemoryDbService {
         taste: 'The taste of whiskey is soft, well balanced, harmonious, pleasant, slightly sweet with pronounced malt, grain and vanilla tones. The finish is long with dry woody notes.',
         aroma: 'The gentle scent of whiskey envelops with sweet vanilla notes to accompany shades of caramel, ripe apples and burnt oak.',
         gastronomy: 'It is recommended that specialists consume whiskey as a digestif, as part of cocktails or paired with a cigar.',
-        drinkPhotos: ['https://s2.wine.style/images_gen/196/196695/0_0_cat.jpg'],
+        drinkPhotos: {
+          smallPhoto: "https://s2.wine.style/images_gen/196/196695/0_0_cat.jpg",
+          mainPhoto: 'https://s2.wine.style/images_gen/196/196695/0_0_prod_desktop.jpg',
+          additionalPhotos: []
+        },
         suitableProducts: [{
           id: 2,
           title: 'cigar',
@@ -78,6 +86,47 @@ export class InMemoryDataService implements InMemoryDbService {
           }
         ]
       },
+      {
+        id: 3,
+        drinkType: {
+          id: 2,
+          title: 'Wine '
+        },
+        name: 'Alvarez y Diez, "Silga" Verdejo, Rueda DO, 2022',
+        price: 10.5,
+        rating: 6.8,
+        alcoPrecentage: 13,
+        producingCountry: {
+          id: 4,
+          name: 'Spain'
+        },
+        brand: {
+          id: 1,
+          name: "Silga",
+        },
+        producer: {
+          id: 1,
+          name: " Alvarez y Diez"
+        },
+        color: 'Wine dense, deep color with black reflections and brilliant purple hue on the edge.',
+        taste: 'The wine has a strong, balanced and harmonious taste with a smooth texture. Aftertaste - a long, spicy and refreshing, with a hint of liquorice.',
+        aroma: 'The rich aroma of the wine reveals notes of ripe fruit, candied cherry, plum and mocha.',
+        gastronomy: 'Wine will be combined with red meat, cold cuts and delicacies, seasoned cheeses.',
+        drinkPhotos: {
+          smallPhoto: 'https://s2.wine.style/images_gen/211/211726/0_0_cat.jpg',
+          mainPhoto: "https://s2.wine.style/images_gen/211/211726/0_0_prod_desktop.jpg",
+          additionalPhotos: []
+        },
+        suitableProducts: [{
+          id: 2,
+          title: 'cigar',
+        },
+          {
+            id: 3,
+            title: "cocktails"
+          }
+        ]
+      }
     ]
     return { drinks }
   }

@@ -31,13 +31,20 @@
       </div>
     </div>
 
+    <nb-tabset class="tab" fullWidth>
+      <nb-tab tabTitle="All Drinks">
+        <div class="drink-list">
+          <app-drink-item
+            *ngFor="let drink of drinks"
+            [drink]="drink"
+          ></app-drink-item>
+        </div>
+      </nb-tab>
+      <nb-tab tabTitle="My Drinks" [disabled]="!isAuthenticated">
+        <p>List of <strong>orders</strong>.</p>
+      </nb-tab>
+    </nb-tabset>
 
-    <div class="drink-list">
-      <app-drink-item
-        *ngFor="let drink of drinks"
-        [drink]="drink"
-      ></app-drink-item>
-    </div>
 
   </div>
 </div>
