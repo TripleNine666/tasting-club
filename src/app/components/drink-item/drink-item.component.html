@@ -4,13 +4,23 @@
   </a>
   <div class="drink-block">
     <div class="drink-header">
+      <div class="drink-header__status" *ngIf="status">{{status}}</div>
       <div routerLink="/drink-details/{{drink.id}}">{{drink.name}}</div>
     </div>
     <div class="drink-info">
-      <div class="drink-info__rating">
+
+      <div class="drink-info__rating" *ngIf="!ratingFromUser; else userRating">
         <div class="drink-info__rating__label">Rating of tasting club: {{drink.rating}}</div>
         <star-rating [value]="drink.rating" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="true"></star-rating>
       </div>
+      <ng-template #userRating>
+        <div *ngIf="ratingFromUser">
+          <div class="drink-info__rating__label">Your rating: {{ratingFromUser}}</div>
+          <star-rating [value]="ratingFromUser" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="false"></star-rating>
+        </div>
+      </ng-template>
+
+
       <ul class="list-description">
         <li>
           <span class="drink-info-description">Region:</span>
@@ -33,6 +43,8 @@
           <a>{{drink.drinkType.title}}</a>
         </li>
       </ul>
+      <div class="review" *ngIf="review">Review: {{review}}</div>
+      <div class="date" *ngIf="degustationDate">Date: {{degustationDate}}</div>
     </div>
     <div class="drink-actions">
       <button nbButton size="large" status="primary">Add to My Drinks</button>

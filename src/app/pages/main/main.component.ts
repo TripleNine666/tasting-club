@@ -3,6 +3,7 @@ import {DrinkService} from "../../services/drink/drink.service";
 import {Drink} from "../../shared/interfaces/IDrink.interface";
 import {AuthService} from "../../services/auth/auth.service";
 import {Subscription} from "rxjs";
+import {UserDrink} from "../../shared/interfaces/IUserDrink.interface";
 
 @Component({
   selector: 'app-main',
@@ -15,7 +16,8 @@ export class MainComponent implements OnInit, OnDestroy{
 
   isAuthenticated: boolean = false;
 
-  drinks?: Drink[];
+  drinks?: Drink[]; // All Drinks
+  userDrinks?: UserDrink[] // User Drinks
   sortCriteria = 'name';
 
   obs?: Subscription; //variable to store the subscription
@@ -27,6 +29,21 @@ export class MainComponent implements OnInit, OnDestroy{
       console.log(this.isAuthenticated)
     });
     this.getDrinks();
+    this.getUserDrinks();
+  }
+
+  getUserDrinks() {
+    // get user drinks if user exists
+    // check if auth
+    if (!this.isAuthenticated) {
+      return;
+    }
+    // get userId
+    const userId = 1;
+    // get user drinks by userId
+    this.drinkService.getUserDrinks(userId).subscribe(userDrunks => {
+      this.userDrinks = userDrunks;
+    })
   }
 
   ngOnDestroy() {
@@ -36,7 +53,6 @@ export class MainComponent implements OnInit, OnDestroy{
   getDrinks() {
     this.drinkService.getDrinks().subscribe(drinks => {
       this.drinks = drinks;
-      console.log(drinks)
     })
   }
 

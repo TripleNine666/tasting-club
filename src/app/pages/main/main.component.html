@@ -41,7 +41,16 @@
         </div>
       </nb-tab>
       <nb-tab tabTitle="My Drinks" [disabled]="!isAuthenticated">
-        <p>List of <strong>orders</strong>.</p>
+        <div class="drink-list">
+          <app-drink-item
+            *ngFor="let userDrink of userDrinks"
+            [drink]="userDrink.drink"
+            [status]="userDrink.status"
+            [ratingFromUser]="userDrink.rating"
+            [degustationDate]="userDrink.dateOfDegustation"
+            [review]="userDrink.review"
+          ></app-drink-item>
+        </div>
       </nb-tab>
     </nb-tabset>
 

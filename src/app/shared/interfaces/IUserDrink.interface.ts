@@ -1,9 +1,6 @@
 import {Drink} from "./IDrink.interface";
+import {UserDrinkStatus} from "../enum/UserDrinkStatus";
 
-enum UserDrinkStatus {
-  PENDING = 'pending',
-  DEGUSTATED = 'degustated'
-}
 
 export interface UserDrink {
   id?: number,
@@ -11,7 +8,7 @@ export interface UserDrink {
   drink: Drink,
   eventId?: number,
   review: string,
-  rating: number,
-  dateOfDegustation: Date;
+  rating: number | null,
+  dateOfDegustation: Date | null;
   status: UserDrinkStatus;
 }
