@@ -8,7 +8,14 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { NebularModule } from "./modules/nebular/nebular.module";
-import {NbIconModule, NbLayoutModule, NbSidebarModule, NbThemeModule} from "@nebular/theme";
+import {
+  NbDatepickerModule,
+  NbDialogModule,
+  NbIconModule,
+  NbLayoutModule,
+  NbSidebarModule,
+  NbThemeModule
+} from "@nebular/theme";
 import { HeaderComponent } from './components/UI/header/header.component';
 import { MainComponent } from './pages/main/main.component';
 import {NbEvaIconsModule} from "@nebular/eva-icons";
@@ -20,6 +27,8 @@ import { RatingModule } from 'ng-starrating';
 import { FilterComponent } from './components/filter/filter.component';
 import { FilterItemComponent } from './components/filter/filter-item/filter-item.component';
 import { DrinkDetailsComponent } from './pages/drink-details/drink-details.component';
+import { DialogDrinkReviewComponent } from './components/dialog-drink-review/dialog-drink-review.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,10 +39,12 @@ import { DrinkDetailsComponent } from './pages/drink-details/drink-details.compo
     DrinkItemComponent,
     FilterComponent,
     FilterItemComponent,
-    DrinkDetailsComponent
+    DrinkDetailsComponent,
+    DialogDrinkReviewComponent
   ],
   imports: [
     NbThemeModule.forRoot(),
+    NbDialogModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     NebularModule,
@@ -48,7 +59,7 @@ import { DrinkDetailsComponent } from './pages/drink-details/drink-details.compo
       put204: false
     }),
     NbAuthModule.forRoot({
-      strategies: [ NbDummyAuthStrategy.setup({
+      strategies: [NbDummyAuthStrategy.setup({
         name: 'email',
         alwaysFail: false,
         token: {
@@ -59,6 +70,9 @@ import { DrinkDetailsComponent } from './pages/drink-details/drink-details.compo
       forms: {},
     }),
     RatingModule,
+    ReactiveFormsModule,
+    NbDatepickerModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

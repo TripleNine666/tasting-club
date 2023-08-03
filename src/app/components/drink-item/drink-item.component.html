@@ -1,11 +1,13 @@
-<form class="container" *ngIf="drink">
+<div class="container" *ngIf="drink">
   <a class="image">
     <img src="{{drink.drinkPhotos.smallPhoto}}" alt="{{drink.name}}" routerLink="/drink-details/{{drink.id}}">
   </a>
   <div class="drink-block">
-    <div class="drink-header">
-      <div class="drink-header__status" *ngIf="status">{{status}}</div>
+    <div class="drink-header" style="position: relative;">
       <div routerLink="/drink-details/{{drink.id}}">{{drink.name}}</div>
+      <div class="drink-header__status" *ngIf="status">
+        <nb-badge class="drink-header__status__badge" text="{{status}}" [status]="getColorByStatus(status)" position="top end"></nb-badge>
+      </div>
     </div>
     <div class="drink-info">
 
@@ -14,9 +16,12 @@
         <star-rating [value]="drink.rating" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="true"></star-rating>
       </div>
       <ng-template #userRating>
-        <div *ngIf="ratingFromUser">
-          <div class="drink-info__rating__label">Your rating: {{ratingFromUser}}</div>
-          <star-rating [value]="ratingFromUser" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="false"></star-rating>
+        <div class="drink-info__rating" *ngIf="ratingFromUser">
+          <span class="drink-info__rating__number">{{ratingFromUser}}</span>
+          <div>
+            <div class="drink-info__rating__label">Your rating:</div>
+            <star-rating [value]="ratingFromUser" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="false" (rate)="onRate($event)"></star-rating>
+          </div>
         </div>
       </ng-template>
 
@@ -43,11 +48,30 @@
           <a>{{drink.drinkType.title}}</a>
         </li>
       </ul>
-      <div class="review" *ngIf="review">Review: {{review}}</div>
-      <div class="date" *ngIf="degustationDate">Date: {{degustationDate}}</div>
+      <div *ngIf="degustationDate" class="review-container">
+        <div class="review-block" *ngIf="review; else reviewNotExists">
+          <div class="review-block__label">Review:</div>
+          <div>{{review}}</div>
+        </div>
+        <ng-template #reviewNotExists>
+          <div class="review-block">
+            <div class="review-block__label">Review:</div>
+            <div class="empty-review">You haven't left a review yet</div>
+          </div>
+        </ng-template>
+        <div class="review-block">
+          <div class="review-block__label">Date of your last degustation: </div>
+          <div>{{degustationDate | date}}</div>
+        </div>
+      </div>
     </div>
-    <div class="drink-actions">
+    <div class="drink-actions" *ngIf="!status; else changeReview">
       <button nbButton size="large" status="primary">Add to My Drinks</button>
     </div>
+    <ng-template #changeReview>
+      <div class="drink-actions">
+        <button nbButton size="large" status="primary" (click)="openDialog()">Change Review</button>
+      </div>
+    </ng-template>
   </div>
-</form>
+</div>

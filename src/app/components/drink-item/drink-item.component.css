@@ -37,6 +37,10 @@ a img {
   color: #df6860;
 }
 
+.drink-header__status__badge {
+  margin-right: 30px;
+}
+
 .drink-info__rating {
   display: flex;
 }
@@ -98,6 +102,46 @@ li a:hover {
   align-self: flex-end;
   padding-right: 100px;
 }
+
+
+/* UserDrink review block*/
+
+.review-container {
+  padding-top: 30px;
+}
+
+.review-block {
+  display: flex;
+}
+
+.review-block__label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.drink-info__rating {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.drink-info__rating__number {
+  margin-right: 10px;
+  line-height: 30px;
+  font-size: 40px;
+  color: #1d375a;
+}
+
+.drink-info__rating__label {
+  line-height: 1;
+  font-size: 12px;
+  color: #b2b2b2;
+}
+
+.empty-review {
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
 
 
 

@@ -27,4 +27,8 @@ export class DrinkService {
     return this.http.get<UserDrink[]>(`${this.userDrinkUrl}?userId=${userId}`);
   }
 
+  updateUserDrink(userDrink: UserDrink): Observable<UserDrink> {
+    return this.http.put<UserDrink>(`${this.userDrinkUrl}/${userDrink.id}`, userDrink)
+  }
+
 }

@@ -1,0 +1,29 @@
+<nb-card>
+  <nb-card-header>{{drinkName}}</nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="form">
+      <div class="body-container">
+        <div class="body-block">
+          <span class="body-block__label">Chose date of new degustation: </span>
+          <input nbInput placeholder="Pick Date" [nbDatepicker]="dateTimePicker" formControlName="degustationDate">
+          <nb-datepicker #dateTimePicker></nb-datepicker>
+        </div>
+        <div class="body-block">
+          <span class="body-block__label">Chose rating of drink: </span>
+          <span class="rating">{{ratingFromUser}}</span>
+          <star-rating [value]="ratingFromUser" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="false" (rate)="onRate($event)"></star-rating>
+        </div>
+        <div class="body-block">
+          <span class="body-block__label">You can leave your review: </span>
+          <textarea nbInput formControlName="review" [placeholder]="review"></textarea>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <div class="footer-container">
+      <button nbButton ghost status="danger" (click)="close()">Cancel</button>
+      <button nbButton ghost status="success" (click)="save()" [disabled]="form.invalid">Save</button>
+    </div>
+  </nb-card-footer>
+</nb-card>

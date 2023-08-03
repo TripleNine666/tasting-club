@@ -6,7 +6,7 @@ import {
   NbInputModule,
   NbFormFieldModule,
   NbButtonGroupModule,
-  NbCheckboxModule, NbCardModule, NbTabsetModule
+  NbCheckboxModule, NbCardModule, NbTabsetModule, NbBadgeModule
 } from '@nebular/theme';
 
 
@@ -23,6 +23,7 @@ import {
     NbCheckboxModule,
     NbCardModule,
     NbTabsetModule,
+    NbBadgeModule,
   ],
   exports: [
     NbButtonModule,
@@ -33,6 +34,7 @@ import {
     NbCheckboxModule,
     NbCardModule,
     NbTabsetModule,
+    NbBadgeModule,
   ]
 })
 export class NebularModule { }

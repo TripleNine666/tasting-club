@@ -1,0 +1,25 @@
+.body-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.body-block__label {
+  color: #b3b3b3;
+  font-size: 13px;
+}
+
+.rating {
+  margin-right: 10px;
+  line-height: 30px;
+  font-size: 40px;
+  color: #1d375a;
+  padding: 10px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
