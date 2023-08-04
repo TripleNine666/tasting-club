@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Drink} from "../../shared/interfaces/IDrink.interface";
 import {UserDrinkStatus} from "../../shared/enum/UserDrinkStatus";
 import {NbDialogService} from "@nebular/theme";
@@ -22,6 +22,8 @@ export class DrinkItemComponent {
   @Input() review?: string;
   @Input() ratingFromUser?: number | null;
   @Input() degustationDate?: Date | null;
+
+  @Output() addToMyDrinks = new EventEmitter<Drink>();
 
 
   userDrinkStatus = UserDrinkStatus;
@@ -56,6 +58,10 @@ export class DrinkItemComponent {
         this.drinkService.updateUserDrink(userDrink as UserDrink).subscribe();
       }
     });
+  }
+
+  onAddToMyDrinksButton() {
+    this.addToMyDrinks.emit(this.drink);
   }
 
   onRate($event:{newValue:number}) {

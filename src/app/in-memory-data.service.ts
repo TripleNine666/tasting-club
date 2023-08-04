@@ -180,4 +180,10 @@ export class InMemoryDataService implements InMemoryDbService {
     ]
     return { drinks, userDrinks }
   }
+
+  genId(userDrinks: UserDrink[]): number {
+    return userDrinks.length > 0
+      ? Math.max(...userDrinks.map((ud) => ud.id ?? 0)) + 1
+      : 1;
+  }
 }

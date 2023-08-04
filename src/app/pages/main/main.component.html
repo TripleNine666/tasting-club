@@ -37,6 +37,7 @@
           <app-drink-item
             *ngFor="let drink of drinks"
             [drink]="drink"
+            (addToMyDrinks)="addToUserDrinks($event)"
           ></app-drink-item>
         </div>
       </nb-tab>

@@ -31,4 +31,8 @@ export class DrinkService {
     return this.http.put<UserDrink>(`${this.userDrinkUrl}/${userDrink.id}`, userDrink)
   }
 
+  createUserDrink(userDrink: UserDrink): Observable<UserDrink> {
+    return this.http.post<UserDrink>(`${this.userDrinkUrl}`, userDrink)
+  }
+
 }

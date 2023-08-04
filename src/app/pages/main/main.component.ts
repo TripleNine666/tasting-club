@@ -1,9 +1,10 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DrinkService} from "../../services/drink/drink.service";
 import {Drink} from "../../shared/interfaces/IDrink.interface";
 import {AuthService} from "../../services/auth/auth.service";
 import {Subscription} from "rxjs";
 import {UserDrink} from "../../shared/interfaces/IUserDrink.interface";
+import {UserDrinkStatus} from "../../shared/enum/UserDrinkStatus";
 
 @Component({
   selector: 'app-main',
@@ -30,6 +31,31 @@ export class MainComponent implements OnInit, OnDestroy{
     });
     this.getDrinks();
     this.getUserDrinks();
+  }
+
+  addToUserDrinks(drink: Drink) {
+    //check if drink already exist in userDrinks
+    const userDrink = this.userDrinks?.find((ud) => ud.drink.id === drink.id);
+    if (userDrink) {
+      //TODO: some message to show user that drink already exist
+      console.log(userDrink)
+      return;
+    }
+
+    // create new userDrink
+    const newUserDrink: UserDrink = {
+      userId: 1, // get userId from user
+      drink,
+      review: '',
+      rating: null,
+      dateOfDegustation: null,
+      status: UserDrinkStatus.PENDING,
+    }
+    // request to the server
+    this.drinkService.createUserDrink(newUserDrink).subscribe(userDrink => {
+      console.log(userDrink)
+      this.userDrinks?.push(userDrink);
+    })
   }
 
   getUserDrinks() {
