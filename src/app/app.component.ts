@@ -8,14 +8,12 @@ import {AuthService} from "./services/auth/auth.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isAuthenticated = false;
 
   constructor(private nbAuthService: NbAuthService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.nbAuthService.onAuthenticationChange().subscribe(auth => {
       this.authService.changeIsAuthenticated(auth);
-      this.isAuthenticated = auth;
     });
   }
 }

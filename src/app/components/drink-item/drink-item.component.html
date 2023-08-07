@@ -65,13 +65,11 @@
         </div>
       </div>
     </div>
-    <div class="drink-actions" *ngIf="!status; else changeReview">
+    <div class="drink-actions" *ngIf="!status">
       <button nbButton size="large" status="primary" (click)="onAddToMyDrinksButton()">Add to My Drinks</button>
     </div>
-    <ng-template #changeReview>
-      <div class="drink-actions">
+      <div class="drink-actions" *ngIf="status">
         <button nbButton size="large" status="primary" (click)="openDialog()">Change Review</button>
       </div>
-    </ng-template>
   </div>
 </div>

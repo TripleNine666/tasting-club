@@ -43,7 +43,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     DialogDrinkReviewComponent
   ],
   imports: [
-    NbThemeModule.forRoot(),
+    NbThemeModule.forRoot({name: 'default'}),
     NbDialogModule.forRoot(),
     BrowserModule,
     AppRoutingModule,

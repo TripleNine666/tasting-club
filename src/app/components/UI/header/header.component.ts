@@ -1,23 +1,28 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {NbAuthService} from "@nebular/auth";
 import {Router} from "@angular/router";
+import {AuthService} from "../../../services/auth/auth.service";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent {
-  constructor(private authService: NbAuthService, private router: Router) {
+export class HeaderComponent implements OnInit{
+  constructor(private nbAuthService: NbAuthService, private router: Router, private authService: AuthService) {
   }
-  @Input() isAuthenticated = false;
+  isAuthenticated = false;
 
+  ngOnInit() {
+    this.authService.isAuthenticated$.subscribe(isAuth => {
+      this.isAuthenticated = isAuth;
+    })
+  }
 
 
   logOut(): void {
-    this.authService.logout('email').subscribe(() => {
-      this.router.navigate(['']).then();
+    this.nbAuthService.logout('email').subscribe(() => {
+      this.router.navigate(['/']).then();
     })
   }
 }

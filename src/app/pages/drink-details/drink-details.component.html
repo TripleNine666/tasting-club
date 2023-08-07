@@ -1,81 +1,91 @@
-<nb-card accent="info" *ngIf="drink" class="card">
-  <nb-card-header class="header">
-    <h1 class="header-title">
-      {{drink.name}}
-    </h1>
-  </nb-card-header>
-  <nb-card-body>
-    <div class="body-image">
-      <a>
-        <img src="{{drink.drinkPhotos.mainPhoto}}" alt="{{drink.name}}">
-      </a>
-    </div>
-    <div class="body-info">
-      <div class="body-info-block">
-        <div class="body-info-block__right">
-          <div class="price-block">
-            <p class="price-block__label">price</p>
-            <div class="price-block__cost">{{drink.price | currency}}</div>
-          </div>
-          <div class="button-block">
-            <button nbButton status="primary" size="giant">Add to my drinks</button>
-          </div>
+<nb-layout>
+  <nb-layout-header>
+    <app-header></app-header>
+  </nb-layout-header>
+
+
+  <nb-layout-column>
+    <nb-card accent="info" *ngIf="drink" class="card">
+      <nb-card-header class="header">
+        <h1 class="header-title">
+          {{drink.name}}
+        </h1>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="body-image">
+          <a>
+            <img src="{{drink.drinkPhotos.mainPhoto}}" alt="{{drink.name}}">
+          </a>
         </div>
-        <div class="body-info-block__main">
-          <div class="drink-info__rating">
-            <span class="drink-info__rating__number">{{drink.rating}}</span>
-            <div>
-              <div class="drink-info__rating__label">Rating of tasting club:</div>
-              <star-rating [value]="drink.rating" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="true"></star-rating>
+        <div class="body-info">
+          <div class="body-info-block">
+            <div class="body-info-block__right">
+              <div class="price-block">
+                <p class="price-block__label">price</p>
+                <div class="price-block__cost">{{drink.price | currency}}</div>
+              </div>
+              <div class="button-block">
+                <button nbButton status="primary" size="giant">Add to my drinks</button>
+              </div>
+            </div>
+            <div class="body-info-block__main">
+              <div class="drink-info__rating">
+                <span class="drink-info__rating__number">{{drink.rating}}</span>
+                <div>
+                  <div class="drink-info__rating__label">Rating of tasting club:</div>
+                  <star-rating [value]="drink.rating" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="gray" size="24px" [readonly]="true"></star-rating>
+                </div>
+              </div>
+              <ul class="list-description">
+                <li>
+                  <span class="drink-info-description">Region:</span>
+                  <a>{{drink.producingCountry.name}}</a>
+                </li>
+                <li>
+                  <span class="drink-info-description">Producer:</span>
+                  <a> {{drink.producer.name}}</a>
+                </li>
+                <li>
+                  <span class="drink-info-description">Brand:</span>
+                  <a>{{drink.brand.name}}</a>
+                </li>
+                <li>
+                  <span class="drink-info-description">Strength:</span>
+                  <a>{{drink.alcoPrecentage}}%</a>
+                </li>
+                <li>
+                  <span class="drink-info-description">Type:</span>
+                  <a>{{drink.drinkType.title}}</a>
+                </li>
+              </ul>
             </div>
           </div>
-          <ul class="list-description">
-            <li>
-              <span class="drink-info-description">Region:</span>
-              <a>{{drink.producingCountry.name}}</a>
-            </li>
-            <li>
-              <span class="drink-info-description">Producer:</span>
-              <a> {{drink.producer.name}}</a>
-            </li>
-            <li>
-              <span class="drink-info-description">Brand:</span>
-              <a>{{drink.brand.name}}</a>
-            </li>
-            <li>
-              <span class="drink-info-description">Strength:</span>
-              <a>{{drink.alcoPrecentage}}%</a>
-            </li>
-            <li>
-              <span class="drink-info-description">Type:</span>
-              <a>{{drink.drinkType.title}}</a>
-            </li>
-          </ul>
         </div>
-      </div>
-    </div>
-  </nb-card-body>
-  <nb-card-footer>
-    <div class="footer-description">
-      <h2 class="footer-description-title">Tasting Notes</h2>
-      <div>
-        <div class="footer-description-block">
-          <span class="title">Color</span>
-          <p>{{drink.color}}</p>
+      </nb-card-body>
+      <nb-card-footer>
+        <div class="footer-description">
+          <h2 class="footer-description-title">Tasting Notes</h2>
+          <div>
+            <div class="footer-description-block">
+              <span class="title">Color</span>
+              <p>{{drink.color}}</p>
+            </div>
+            <div class="footer-description-block">
+              <span class="title">Taste</span>
+              <p>{{drink.taste}}</p>
+            </div>
+            <div class="footer-description-block">
+              <span class="title">Aroma</span>
+              <p>{{drink.aroma}}</p>
+            </div>
+            <div class="footer-description-block">
+              <span class="title">Gastronomy</span>
+              <p>{{drink.gastronomy}}</p>
+            </div>
+          </div>
         </div>
-        <div class="footer-description-block">
-          <span class="title">Taste</span>
-          <p>{{drink.taste}}</p>
-        </div>
-        <div class="footer-description-block">
-          <span class="title">Aroma</span>
-          <p>{{drink.aroma}}</p>
-        </div>
-        <div class="footer-description-block">
-          <span class="title">Gastronomy</span>
-          <p>{{drink.gastronomy}}</p>
-        </div>
-      </div>
-    </div>
-  </nb-card-footer>
-</nb-card>
+      </nb-card-footer>
+    </nb-card>
+  </nb-layout-column>
+
+</nb-layout>

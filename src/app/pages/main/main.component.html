@@ -1,60 +1,68 @@
-<div class="container">
+<nb-layout>
+  <nb-layout-header>
+    <app-header></app-header>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <div class="container">
 
 
-  <app-filter class="sidebar">
+      <app-filter class="sidebar">
 
-  </app-filter>
+      </app-filter>
 
-  <div class="content-container">
-
-
-    <div class="main-label">
-      <h2>Welcome to out tasting team!</h2>
-    </div>
+      <div class="content-container">
 
 
-    <div class="actions">
-      <div class="actions-sort">
-        <p class="actions-sort__title">Sort by:</p>
-        <nb-button-group (valueChange)="updateSorting($event)" size="tiny" ghost shape="semi-round">
-          <button nbButtonToggle value="name" pressed>Name</button>
-          <button nbButtonToggle value="rating">Rating</button>
-        </nb-button-group>
-      </div>
-      <div class="actions__search">
-        <label for="search">Enter a name of drink</label>
-        <nb-form-field>
-          <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
-          <input id="search" type="text" nbInput fullWidth status="primary" placeholder="Search...">
-          <button class="actions__search__button" nbButton status="primary">Search</button>
-        </nb-form-field>
-      </div>
-    </div>
-
-    <nb-tabset class="tab" fullWidth>
-      <nb-tab tabTitle="All Drinks">
-        <div class="drink-list">
-          <app-drink-item
-            *ngFor="let drink of drinks"
-            [drink]="drink"
-            (addToMyDrinks)="addToUserDrinks($event)"
-          ></app-drink-item>
+        <div class="main-label">
+          <h2>Welcome to out tasting team!</h2>
         </div>
-      </nb-tab>
-      <nb-tab tabTitle="My Drinks" [disabled]="!isAuthenticated">
-        <div class="drink-list">
-          <app-drink-item
-            *ngFor="let userDrink of userDrinks"
-            [drink]="userDrink.drink"
-            [status]="userDrink.status"
-            [ratingFromUser]="userDrink.rating"
-            [degustationDate]="userDrink.dateOfDegustation"
-            [review]="userDrink.review"
-            [id]="userDrink.id"
-            [userId]="userDrink.userId"
-          ></app-drink-item>
+
+
+        <div class="actions">
+          <div class="actions-sort">
+            <p class="actions-sort__title">Sort by:</p>
+            <nb-button-group (valueChange)="updateSorting($event)" size="tiny" ghost shape="semi-round">
+              <button nbButtonToggle value="name" pressed>Name</button>
+              <button nbButtonToggle value="rating">Rating</button>
+            </nb-button-group>
+          </div>
+          <div class="actions__search">
+            <label for="search">Enter a name of drink</label>
+            <nb-form-field>
+              <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
+              <input id="search" type="text" nbInput fullWidth status="primary" placeholder="Search...">
+              <button class="actions__search__button" nbButton status="primary">Search</button>
+            </nb-form-field>
+          </div>
         </div>
-      </nb-tab>
-    </nb-tabset>
-  </div>
-</div>
+
+        <nb-tabset class="tab" fullWidth>
+          <nb-tab tabTitle="All Drinks">
+            <div class="drink-list">
+              <app-drink-item
+                *ngFor="let drink of drinks"
+                [drink]="drink"
+                (addToMyDrinks)="addToUserDrinks($event)"
+              ></app-drink-item>
+            </div>
+          </nb-tab>
+          <nb-tab tabTitle="My Drinks" [disabled]="!isAuthenticated" [active]="true">
+            <div class="drink-list">
+              <app-drink-item
+                *ngFor="let userDrink of userDrinks"
+                [drink]="userDrink.drink"
+                [status]="userDrink.status"
+                [ratingFromUser]="userDrink.rating"
+                [degustationDate]="userDrink.dateOfDegustation"
+                [review]="userDrink.review"
+                [id]="userDrink.id"
+                [userId]="userDrink.userId"
+              ></app-drink-item>
+            </div>
+          </nb-tab>
+        </nb-tabset>
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>

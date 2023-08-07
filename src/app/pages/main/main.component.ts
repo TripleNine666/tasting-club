@@ -6,6 +6,7 @@ import {Subscription} from "rxjs";
 import {UserDrink} from "../../shared/interfaces/IUserDrink.interface";
 import {UserDrinkStatus} from "../../shared/enum/UserDrinkStatus";
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -86,4 +87,5 @@ export class MainComponent implements OnInit, OnDestroy{
     this.sortCriteria = value[0];
     console.log(this.sortCriteria)
   }
+
 }
