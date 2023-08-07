@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {DrinkService} from "../../services/drink/drink.service";
 import {Drink} from "../../shared/interfaces/IDrink.interface";
+import {catchError, of} from "rxjs";
 
 @Component({
   selector: 'app-drink-details',
@@ -27,4 +28,16 @@ export class DrinkDetailsComponent implements OnInit{
     })
   }
 
+  addToMyDrinks() {
+    if (this.drink){
+      this.drinkService.addToUserDrinks(this.drink).pipe(
+        catchError((error) => {
+          // Handle the error here
+          console.log(error.message);
+          // Show a dialog or redirect the user
+          return of(null);
+        })
+      ).subscribe();
+    }
+  }
 }

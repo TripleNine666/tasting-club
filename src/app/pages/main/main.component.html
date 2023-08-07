@@ -50,7 +50,7 @@
           <nb-tab tabTitle="My Drinks" [disabled]="!isAuthenticated" [active]="true">
             <div class="drink-list">
               <app-drink-item
-                *ngFor="let userDrink of userDrinks"
+                *ngFor="let userDrink of drinkService.userDrinks$ | async"
                 [drink]="userDrink.drink"
                 [status]="userDrink.status"
                 [ratingFromUser]="userDrink.rating"
