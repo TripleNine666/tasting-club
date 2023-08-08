@@ -18,7 +18,7 @@ export class UserGroupsComponent implements OnInit{
   }
 
   getUserGroups() {
-    this.groupService.getUserGroups().subscribe(userGroups => {
+    this.groupService.getUserGroups().subscribe((userGroups: UserGroup[]) => {
       this.userGroups = userGroups;
       console.log(this.userGroups)
     })

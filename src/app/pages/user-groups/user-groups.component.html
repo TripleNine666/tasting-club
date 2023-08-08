@@ -6,6 +6,9 @@
     hi
   </nb-sidebar>
   <nb-layout-column>
-    <h3>hi</h3>
+    <h2>My Groups</h2>
+    <div class="group-list">
+      <app-group-card *ngFor="let group of userGroups" [group]="group"></app-group-card>
+    </div>
   </nb-layout-column>
 </nb-layout>

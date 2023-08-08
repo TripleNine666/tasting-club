@@ -184,7 +184,7 @@ export class InMemoryDataService implements InMemoryDbService {
         "id": 1,
         "title": "Wine Lovers",
         "description": "We love Wine",
-        "accessType": "for all",
+        "accessType": "public",
         "photos": [
           "https://luding.ru/upload/resize_cache/iblock/3ec/740_740_1/0oasri3m4ujeuj1wyfm9lrxcw56ayxhr.jpg"
         ]
@@ -193,7 +193,16 @@ export class InMemoryDataService implements InMemoryDbService {
         "id": 2,
         "title": "Whiskey Lovers",
         "description": "We love Whiskey",
-        "accessType": "for all",
+        "accessType": "private",
+        "photos": [
+          "https://luding.ru/upload/resize_cache/iblock/3ec/740_740_1/0oasri3m4ujeuj1wyfm9lrxcw56ayxhr.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Champagne Lovers",
+        "description": "We love Champagne",
+        "accessType": "closed",
         "photos": [
           "https://luding.ru/upload/resize_cache/iblock/3ec/740_740_1/0oasri3m4ujeuj1wyfm9lrxcw56ayxhr.jpg"
         ]

@@ -1,0 +1,11 @@
+.card-header {
+  position: relative;
+}
+
+.group-photo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  width: 300px;
+}
+

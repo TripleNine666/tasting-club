@@ -33,6 +33,7 @@ import { DashboardComponent } from './components/UI/dashboard/dashboard.componen
 import { UserGroupsComponent } from './pages/user-groups/user-groups.component';
 import { UserEventsComponent } from './pages/user-events/user-events.component';
 import { AlertMessageComponent } from './components/UI/alert-message/alert-message.component';
+import { GroupCardComponent } from './pages/user-groups/group-card/group-card.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AlertMessageComponent } from './components/UI/alert-message/alert-messa
     DashboardComponent,
     UserGroupsComponent,
     UserEventsComponent,
-    AlertMessageComponent
+    AlertMessageComponent,
+    GroupCardComponent
   ],
   imports: [
     NbThemeModule.forRoot({name: 'default'}),
