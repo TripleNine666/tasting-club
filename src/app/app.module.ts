@@ -29,6 +29,9 @@ import { FilterItemComponent } from './components/filter/filter-item/filter-item
 import { DrinkDetailsComponent } from './pages/drink-details/drink-details.component';
 import { DialogDrinkReviewComponent } from './components/dialog-drink-review/dialog-drink-review.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { DashboardComponent } from './components/UI/dashboard/dashboard.component';
+import { UserGroupsComponent } from './pages/user-groups/user-groups.component';
+import { UserEventsComponent } from './pages/user-events/user-events.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FilterComponent,
     FilterItemComponent,
     DrinkDetailsComponent,
-    DialogDrinkReviewComponent
+    DialogDrinkReviewComponent,
+    DashboardComponent,
+    UserGroupsComponent,
+    UserEventsComponent
   ],
   imports: [
     NbThemeModule.forRoot({name: 'default'}),

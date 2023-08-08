@@ -6,10 +6,7 @@
   <nb-layout-column>
     <div class="container">
 
-
-      <app-filter class="sidebar">
-
-      </app-filter>
+      <app-filter class="sidebar"></app-filter>
 
       <div class="content-container">
 
@@ -17,6 +14,8 @@
         <div class="main-label">
           <h2>Welcome to out tasting team!</h2>
         </div>
+
+        <app-dashboard *ngIf="isAuthenticated"></app-dashboard>
 
 
         <div class="actions">
@@ -47,7 +46,7 @@
               ></app-drink-item>
             </div>
           </nb-tab>
-          <nb-tab tabTitle="My Drinks" [disabled]="!isAuthenticated" [active]="true">
+          <nb-tab tabTitle="My Drinks" [disabled]="!isAuthenticated">
             <div class="drink-list">
               <app-drink-item
                 *ngFor="let userDrink of drinkService.userDrinks$ | async"

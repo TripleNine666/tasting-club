@@ -11,12 +11,16 @@ import {
 } from '@nebular/auth';
 import {ProfileComponent} from "./pages/profile/profile.component";
 import {DrinkDetailsComponent} from "./pages/drink-details/drink-details.component";
+import {UserGroupsComponent} from "./pages/user-groups/user-groups.component";
+import {UserEventsComponent} from "./pages/user-events/user-events.component";
 
 const routes: Routes = [
 
   {path: '', component: MainComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'drink-details/:id', component: DrinkDetailsComponent},
+  {path: 'groups', component: UserGroupsComponent},
+  {path: 'events', component: UserEventsComponent},
 
   //Auth routes
   {
