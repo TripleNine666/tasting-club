@@ -3,6 +3,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 import {Drink} from "./shared/interfaces/IDrink.interface";
 import {UserDrink} from "./shared/interfaces/IUserDrink.interface";
 import {UserDrinkStatus} from "./shared/enum/UserDrinkStatus";
+import {UserGroup} from "./shared/interfaces/IUserGroup.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -177,8 +178,28 @@ export class InMemoryDataService implements InMemoryDbService {
           ]
         },
       }
+    ];
+    const userGroups: UserGroup[] = [
+      {
+        "id": 1,
+        "title": "Wine Lovers",
+        "description": "We love Wine",
+        "accessType": "for all",
+        "photos": [
+          "https://luding.ru/upload/resize_cache/iblock/3ec/740_740_1/0oasri3m4ujeuj1wyfm9lrxcw56ayxhr.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Whiskey Lovers",
+        "description": "We love Whiskey",
+        "accessType": "for all",
+        "photos": [
+          "https://luding.ru/upload/resize_cache/iblock/3ec/740_740_1/0oasri3m4ujeuj1wyfm9lrxcw56ayxhr.jpg"
+        ]
+      }
     ]
-    return { drinks, userDrinks }
+    return { drinks, userDrinks, userGroups }
   }
 
   genId(userDrinks: UserDrink[]): number {
@@ -186,4 +207,5 @@ export class InMemoryDataService implements InMemoryDbService {
       ? Math.max(...userDrinks.map((ud) => ud.id ?? 0)) + 1
       : 1;
   }
+
 }

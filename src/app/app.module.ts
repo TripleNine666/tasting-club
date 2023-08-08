@@ -32,6 +32,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DashboardComponent } from './components/UI/dashboard/dashboard.component';
 import { UserGroupsComponent } from './pages/user-groups/user-groups.component';
 import { UserEventsComponent } from './pages/user-events/user-events.component';
+import { AlertMessageComponent } from './components/UI/alert-message/alert-message.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { UserEventsComponent } from './pages/user-events/user-events.component';
     DialogDrinkReviewComponent,
     DashboardComponent,
     UserGroupsComponent,
-    UserEventsComponent
+    UserEventsComponent,
+    AlertMessageComponent
   ],
   imports: [
     NbThemeModule.forRoot({name: 'default'}),

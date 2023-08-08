@@ -21,6 +21,8 @@ export class MainComponent implements OnInit, OnDestroy{
   userDrinks?: UserDrink[] // User Drinks
   sortCriteria = 'name';
 
+  alertIsOpened = false // var to control alert status
+
   obs?: Subscription; //variable to store the subscription
 
 

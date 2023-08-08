@@ -10,6 +10,7 @@
 
       <div class="content-container">
 
+        <app-alert-message [status]="'success'" [closable]="true" *ngIf="alertIsOpened">Что-то</app-alert-message>
 
         <div class="main-label">
           <h2>Welcome to out tasting team!</h2>
