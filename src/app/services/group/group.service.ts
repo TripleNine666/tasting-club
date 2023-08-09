@@ -16,4 +16,8 @@ export class GroupService {
     return this.http.get<UserGroup[]>(this.userGroupsUrl);
   }
 
+
+  createUserGroup(userGroup: UserGroup): Observable<UserGroup> {
+    return this.http.post<UserGroup>(this.userGroupsUrl, userGroup)
+  }
 }

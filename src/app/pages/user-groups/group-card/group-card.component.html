@@ -1,12 +1,10 @@
-<nb-card *ngIf="group">
-  <nb-card-header>
-    <div class="card-header">
-      <h3>{{ group.title }}</h3>
-      <nb-badge text="{{group.accessType}}" [status]="getStatusByAccessType(group.accessType)" position="top end"></nb-badge>
-    </div>
+<nb-card class="card-item" *ngIf="group" [accent]="getStatusByAccessType(group.accessType)">
+  <nb-card-header class="card-header">
+    <h3>{{ group.title }}</h3>
+    <nb-badge class="badge" text="{{group.accessType}}" [status]="getStatusByAccessType(group.accessType)" position="top end"></nb-badge>
   </nb-card-header>
   <nb-card-body>
-    <img class="group-photo" [src]="group.photos[0]" alt="Group Photo">
+    <div class="group-photo-container" [style.background-image]="getBackgroundImageStyle()"></div>
     <p>{{ group.description }}</p>
   </nb-card-body>
 </nb-card>

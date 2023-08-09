@@ -1,5 +1,11 @@
 .card-header {
   position: relative;
+  transition: background-color 0.3s;
+}
+
+.card-header:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
 }
 
 .group-photo {
@@ -9,3 +15,21 @@
   width: 300px;
 }
 
+.group-photo-container {
+  width: 300px; /* Желаемая ширина изображения */
+  height: 200px; /* Желаемая высота изображения */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
+
+.badge {
+  margin: 8px 10px 0 0;
+}
+
+.card-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}

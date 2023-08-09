@@ -195,7 +195,7 @@ export class InMemoryDataService implements InMemoryDbService {
         "description": "We love Whiskey",
         "accessType": "private",
         "photos": [
-          "https://luding.ru/upload/resize_cache/iblock/3ec/740_740_1/0oasri3m4ujeuj1wyfm9lrxcw56ayxhr.jpg"
+          "https://www.ladogaspb.ru/upload/iblock/5ec/5ec07d49f19b2887f44fdf019426be86.jpg"
         ]
       },
       {
@@ -204,17 +204,17 @@ export class InMemoryDataService implements InMemoryDbService {
         "description": "We love Champagne",
         "accessType": "closed",
         "photos": [
-          "https://luding.ru/upload/resize_cache/iblock/3ec/740_740_1/0oasri3m4ujeuj1wyfm9lrxcw56ayxhr.jpg"
+          "https://pbs.twimg.com/media/DzK7lTvW0AAhfdN.jpg"
         ]
       }
     ]
     return { drinks, userDrinks, userGroups }
   }
 
-  genId(userDrinks: UserDrink[]): number {
-    return userDrinks.length > 0
-      ? Math.max(...userDrinks.map((ud) => ud.id ?? 0)) + 1
-      : 1;
+  genId(userData: UserDrink[] | UserGroup[]): number {
+    return userData.length > 0 ? Math.max(...userData.map((ud) => ud.id ?? 0)) + 1 : 1;
   }
+
+
 
 }

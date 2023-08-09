@@ -1,0 +1,36 @@
+<nb-card *ngIf="groupForm">
+  <nb-card-header>
+    <h3>Create a Group</h3>
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="groupForm">
+      <div class="form-group">
+        <label>Name:</label>
+        <input
+          nbInput
+          fullWidth
+          placeholder="Name"
+          formControlName="title"
+          required
+          [status]="getStatusByFormFieldValid(groupForm.get('title'))"
+        />
+      </div>
+      <div class="form-group">
+        <label>Description:</label>
+        <textarea nbInput fullWidth placeholder="Description" formControlName="description" required [status]="getStatusByFormFieldValid(groupForm.get('description'))"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Access Type:</label>
+        <nb-select fullWidth placeholder="Public/Private" formControlName="accessType" required [status]="getStatusByFormFieldValid(groupForm.get('accessType'))">
+          <nb-option value="public">Public</nb-option>
+          <nb-option value="private">Private</nb-option>
+        </nb-select>
+      </div>
+      <!--  photo here    -->
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton ghost status="danger" (click)="close()">Close</button>
+    <button nbButton ghost status="primary" [disabled]="!groupForm.valid" (click)="createGroup()">Create Group</button>
+  </nb-card-footer>
+</nb-card>

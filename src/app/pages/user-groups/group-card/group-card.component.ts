@@ -16,4 +16,9 @@ export class GroupCardComponent {
       return "warning"
     } else return "danger"
   }
+
+  getBackgroundImageStyle(): string {
+    const imageUrl = this.group?.photos ? this.group.photos[0] : 'https://battorg.by/image/cache/catalog/photo/noimage-1000x1000.png';
+    return `url('${imageUrl}')`;
+  }
 }

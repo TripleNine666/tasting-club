@@ -3,5 +3,5 @@ export interface UserGroup {
   title: string,
   description: string,
   accessType: string,
-  photos: string[]
+  photos?: string[]
 }

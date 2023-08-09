@@ -45,10 +45,12 @@
 
 .actions-sort {
   display: flex;
+  margin: 16px 0;
+  align-items: center;
 }
 
 .actions-sort__title {
-  margin-right: 12px;
+  margin: 0 12px 0 0;
   font-size: 13px;
   font-weight: bold;
   color: gray;

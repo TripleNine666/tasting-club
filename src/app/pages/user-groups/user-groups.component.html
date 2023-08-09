@@ -1,14 +1,38 @@
 <nb-layout>
-  <nb-layout-header>
+  <nb-layout-header fixed>
     <app-header></app-header>
   </nb-layout-header>
   <nb-sidebar>
-    hi
+    Filter place
   </nb-sidebar>
   <nb-layout-column>
     <h2>My Groups</h2>
+    <div class="actions">
+      <div class="actions-sort">
+        <p class="actions-sort__title">Sort by:</p>
+        <nb-button-group (valueChange)="updateSorting($event)" size="small" ghost shape="semi-round">
+          <button nbButtonToggle value="name" pressed>Name</button>
+          <button nbButtonToggle value="rating">Rating</button>
+        </nb-button-group>
+      </div>
+      <div class="actions__search">
+        <label for="search">Enter name of group</label>
+        <nb-form-field>
+          <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
+          <input id="search" type="text" nbInput fullWidth status="primary" placeholder="Search...">
+          <button class="actions__search__button" nbButton status="primary">Search</button>
+        </nb-form-field>
+      </div>
+    </div>
     <div class="group-list">
       <app-group-card *ngFor="let group of userGroups" [group]="group"></app-group-card>
+      <div class="create-group-button">
+        <nb-card class="create-group-button__card" (click)="openCreateGroupDialog()">
+          <nb-card-body>
+            <h3>Create New Group...</h3>
+          </nb-card-body>
+        </nb-card>
+      </div>
     </div>
   </nb-layout-column>
 </nb-layout>

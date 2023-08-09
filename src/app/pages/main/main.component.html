@@ -1,5 +1,5 @@
 <nb-layout>
-  <nb-layout-header>
+  <nb-layout-header fixed>
     <app-header></app-header>
   </nb-layout-header>
 
@@ -22,7 +22,7 @@
         <div class="actions">
           <div class="actions-sort">
             <p class="actions-sort__title">Sort by:</p>
-            <nb-button-group (valueChange)="updateSorting($event)" size="tiny" ghost shape="semi-round">
+            <nb-button-group (valueChange)="updateSorting($event)" size="small" ghost shape="semi-round">
               <button nbButtonToggle value="name" pressed>Name</button>
               <button nbButtonToggle value="rating">Rating</button>
             </nb-button-group>

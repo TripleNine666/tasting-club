@@ -34,6 +34,7 @@ import { UserGroupsComponent } from './pages/user-groups/user-groups.component';
 import { UserEventsComponent } from './pages/user-events/user-events.component';
 import { AlertMessageComponent } from './components/UI/alert-message/alert-message.component';
 import { GroupCardComponent } from './pages/user-groups/group-card/group-card.component';
+import { CreateGroupDialogComponent } from './components/create-group-dialog/create-group-dialog.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { GroupCardComponent } from './pages/user-groups/group-card/group-card.co
     UserGroupsComponent,
     UserEventsComponent,
     AlertMessageComponent,
-    GroupCardComponent
+    GroupCardComponent,
+    CreateGroupDialogComponent
   ],
   imports: [
     NbThemeModule.forRoot({name: 'default'}),

@@ -6,3 +6,57 @@
   margin-top: 20px;
 }
 
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.actions-sort {
+  display: flex;
+  margin: 16px 0;
+  align-items: center;
+}
+
+.actions-sort__title {
+  margin: 0 12px 0 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: gray;
+}
+
+#search {
+  margin-right: 2vw;
+}
+
+.actions__search {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.actions__search label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+.actions__search input {
+  width: 40vw;
+}
+
+.create-group-button {
+  align-self: center;
+  cursor: pointer;
+}
+
+.create-group-button:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.create-group-button__card {
+  margin: 0;
+}
+
