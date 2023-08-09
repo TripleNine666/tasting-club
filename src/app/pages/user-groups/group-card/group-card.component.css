@@ -8,21 +8,17 @@
   cursor: pointer;
 }
 
-.group-photo {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+.group-photo-container {
   width: 300px;
+  height: 200px;
+  overflow: hidden;
 }
 
-.group-photo-container {
-  width: 300px; /* Желаемая ширина изображения */
-  height: 200px; /* Желаемая высота изображения */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: 10px;
+.group-photo {
+  width: 100%;
+  height: auto;
 }
+
 
 
 .badge {

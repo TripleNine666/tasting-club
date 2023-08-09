@@ -4,7 +4,12 @@
     <nb-badge class="badge" text="{{group.accessType}}" [status]="getStatusByAccessType(group.accessType)" position="top end"></nb-badge>
   </nb-card-header>
   <nb-card-body>
-    <div class="group-photo-container" [style.background-image]="getBackgroundImageStyle()"></div>
+    <div class="group-photo-container" *ngIf="group.photos">
+      <img *ngIf="group.photos.length > 0; else emptyImg" class="group-photo" [src]="group.photos[0]" alt="Group Photo">
+      <ng-template #emptyImg>
+        <img class="group-photo" src="assets/images/noimage-1000x1000.png" alt="Group Photo">
+      </ng-template>
+    </div>
     <p>{{ group.description }}</p>
   </nb-card-body>
 </nb-card>

@@ -27,6 +27,7 @@
         </nb-select>
       </div>
       <!--  photo here    -->
+      <ngp-image-picker [_config]="config1" ($imageChanged)="onImageChanged($event)"></ngp-image-picker>
     </form>
   </nb-card-body>
   <nb-card-footer>

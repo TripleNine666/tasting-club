@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NbDialogRef} from "@nebular/theme";
 import {UserGroup} from "../../shared/interfaces/IUserGroup.interface";
+import {ImagePickerConf} from "ngp-image-picker";
 
 @Component({
   selector: 'app-create-group-dialog',
@@ -10,6 +11,15 @@ import {UserGroup} from "../../shared/interfaces/IUserGroup.interface";
 })
 export class CreateGroupDialogComponent {
   groupForm?: FormGroup;
+  photos: string[] = [];
+
+
+  config1: ImagePickerConf = {
+    borderRadius: '16px',
+    language: 'en',
+    width: '100px',
+    height: '100px',
+  };
 
   constructor(private fb: FormBuilder, private dialogRef: NbDialogRef<CreateGroupDialogComponent>) { }
 
@@ -22,14 +32,17 @@ export class CreateGroupDialogComponent {
       title: ['', Validators.required],
       description: ['', Validators.required],
       accessType: ['', Validators.required],
-      // photo here
-      photo: [[]],
     });
   }
 
   createGroup() {
     if (this.groupForm!.valid) {
-      this.dialogRef.close(this.groupForm!.value as UserGroup);
+      this.dialogRef.close(
+        {
+          ...this.groupForm!.value,
+          photos: this.photos,
+        } as UserGroup
+      );
     }
   }
 
@@ -39,5 +52,11 @@ export class CreateGroupDialogComponent {
 
   getStatusByFormFieldValid(formField: any) {
     return formField.touched && formField.invalid ? 'danger' : 'basic';
+  }
+
+  onImageChanged(dataUri: string) {
+    this.photos = [dataUri];
+    console.log(dataUri)
+    console.log(this.photos)
   }
 }

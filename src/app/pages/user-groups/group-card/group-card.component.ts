@@ -8,6 +8,7 @@ import {UserGroup} from "../../../shared/interfaces/IUserGroup.interface";
 })
 export class GroupCardComponent {
   @Input() group?: UserGroup;
+  backgroundImageStyle: string | undefined;
 
   getStatusByAccessType(accessType: string) {
     if (accessType === 'public') {
@@ -18,7 +19,11 @@ export class GroupCardComponent {
   }
 
   getBackgroundImageStyle(): string {
-    const imageUrl = this.group?.photos ? this.group.photos[0] : 'https://battorg.by/image/cache/catalog/photo/noimage-1000x1000.png';
-    return `url('${imageUrl}')`;
+    if (!this.backgroundImageStyle) {
+      const imageUrl = this.group?.photos ? this.group.photos[0] : 'https://battorg.by/image/cache/catalog/photo/noimage-1000x1000.png';
+      this.backgroundImageStyle = `url('${imageUrl}')`;
+    }
+    console.log(this.backgroundImageStyle)
+    return this.backgroundImageStyle;
   }
 }

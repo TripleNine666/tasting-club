@@ -35,6 +35,7 @@ import { UserEventsComponent } from './pages/user-events/user-events.component';
 import { AlertMessageComponent } from './components/UI/alert-message/alert-message.component';
 import { GroupCardComponent } from './pages/user-groups/group-card/group-card.component';
 import { CreateGroupDialogComponent } from './components/create-group-dialog/create-group-dialog.component';
+import {NgpImagePickerModule} from "ngp-image-picker";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { CreateGroupDialogComponent } from './components/create-group-dialog/cre
     UserEventsComponent,
     AlertMessageComponent,
     GroupCardComponent,
-    CreateGroupDialogComponent
+    CreateGroupDialogComponent,
   ],
   imports: [
     NbThemeModule.forRoot({name: 'default'}),
@@ -84,7 +85,8 @@ import { CreateGroupDialogComponent } from './components/create-group-dialog/cre
     RatingModule,
     ReactiveFormsModule,
     NbDatepickerModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NgpImagePickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
